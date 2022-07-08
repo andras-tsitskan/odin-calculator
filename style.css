@@ -63,6 +63,7 @@ body {
   background-color: gold;
 }
 
-.number-btn {
+.number-btn,
+.separator-btn {
   background-color: hsl(0, 0%, 95%);
 }

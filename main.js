@@ -78,3 +78,19 @@ function clearAll() {
   displayValue = 0;
   updateDisplayValueField();
 }
+
+const separatorBtn = document.querySelector(".js-separator-btn");
+
+// function toggleSeparatorOn() {
+//   if (separatorBtn.getAttribute("listener")) {
+//   }
+// }
+
+separatorBtn.addEventListener("click", separatorClicked);
+
+function separatorClicked(e) {
+  if (!displayValue.includes(".")) {
+    updateDisplayValue(e.target.textContent);
+  }
+  // separatorBtn.removeEventListener("click", separatorClicked);
+}

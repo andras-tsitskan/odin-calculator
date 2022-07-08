@@ -110,3 +110,15 @@ const operatorButtons = [...document.querySelectorAll(".operator-btn")];
 operatorButtons.forEach((button) => {
   button.addEventListener("click", () => console.log("click"));
 });
+
+//
+
+const addBtn = document.querySelector(".js-add-btn");
+
+addBtn.addEventListener("click", addBtnEvent);
+
+function addBtnEvent() {
+  operator = "add";
+  num1 = displayValue;
+  displayValue = 0;
+}

@@ -71,10 +71,9 @@ body {
 
 /* Footer */
 
-/* footer {
-  position: fixed;
-  bottom: 0;
-} */
+footer {
+  bottom: env(safe-area-inset-bottom);
+}
 
 footer p,
 footer a {

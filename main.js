@@ -86,6 +86,8 @@ clearBtn.addEventListener("click", clearAll);
 
 function clearAll() {
   displayValue = 0;
+  num1 = null;
+  num2 = null;
   updateDisplayValueField();
 }
 

@@ -95,3 +95,12 @@ function separatorClicked(e) {
     updateDisplayValue(e.target.textContent);
   }
 }
+
+// Get equation result functionality.
+
+let operator;
+const operatorButtons = [...document.querySelectorAll(".operator-btn")];
+
+operatorButtons.forEach((button) => {
+  button.addEventListener("click", () => console.log("click"));
+});

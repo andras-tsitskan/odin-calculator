@@ -122,3 +122,19 @@ function addBtnEvent() {
   num1 = displayValue;
   displayValue = 0;
 }
+
+//
+
+const equalBtn = document.querySelector(".js-equal-btn");
+
+equalBtn.addEventListener("click", equalBtnEvent);
+
+function equalBtnEvent() {
+  if (num1 !== null) {
+    num2 = displayValue;
+    let result = operate(operator, num1, num2);
+    num1 = result;
+    displayValue = result;
+    updateDisplayValueField();
+  }
+}

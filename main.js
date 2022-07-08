@@ -44,6 +44,10 @@ function updateDisplayValue(number) {
     displayValue += number;
   }
 
+  updateDisplayValueField();
+}
+
+function updateDisplayValueField() {
   displayValueField.textContent = displayValue;
 }
 

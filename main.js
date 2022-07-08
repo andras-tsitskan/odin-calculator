@@ -90,7 +90,8 @@ const separatorBtn = document.querySelector(".js-separator-btn");
 separatorBtn.addEventListener("click", separatorClicked);
 
 function separatorClicked(e) {
-  if (!displayValue.includes(".")) {
+  // Has to compare to a string, because includes() does not work with numbers. Alternative would be using try-catch statement.
+  if (!displayValue.toString().includes(".")) {
     updateDisplayValue(e.target.textContent);
   }
 }

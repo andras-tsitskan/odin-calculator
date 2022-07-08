@@ -30,3 +30,27 @@ function operate(operator, num1, num2) {
       break;
   }
 }
+
+let displayValue = 0;
+
+const displayValueField = document.querySelector(".js-display");
+
+function updateDisplayValue(number) {
+  if (number === ".") {
+    displayValue += number;
+  } else if (displayValue === 0) {
+    displayValue = number;
+  } else {
+    displayValue += number;
+  }
+
+  displayValueField.textContent = displayValue;
+}
+
+const numberButtons = [...document.querySelectorAll(".number-btn")];
+
+numberButtons.forEach((button) => {
+  button.addEventListener("click", (e) => {
+    updateDisplayValue(e.target.textContent);
+  });
+});

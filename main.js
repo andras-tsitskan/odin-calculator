@@ -107,25 +107,17 @@ function separatorClicked(e) {
 // Get equation result functionality.
 
 let operator;
-const operatorButtons = [...document.querySelectorAll(".operator-btn")];
+const operatorButtons = [...document.querySelectorAll(".js-operator-btn")];
 
 operatorButtons.forEach((button) => {
-  button.addEventListener("click", () => console.log("click"));
+  button.addEventListener("click", operatorBtnEvent);
 });
 
-//
-
-const addBtn = document.querySelector(".js-add-btn");
-
-addBtn.addEventListener("click", addBtnEvent);
-
-function addBtnEvent() {
-  operator = "add";
+function operatorBtnEvent(e) {
+  operator = this.dataset.operator;
   num1 = displayValue;
   displayValue = 0;
 }
-
-//
 
 const equalBtn = document.querySelector(".js-equal-btn");
 

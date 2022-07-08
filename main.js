@@ -31,7 +31,13 @@ function operate(operator, num1, num2) {
   }
 }
 
+// Global default values.
+
 let displayValue = 0;
+let num1 = null;
+let num2 = null;
+
+//
 
 const displayValueField = document.querySelector(".js-display");
 

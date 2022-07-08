@@ -67,3 +67,15 @@ body {
 .separator-btn {
   background-color: hsl(0, 0%, 95%);
 }
+
+@media (max-width: 399px) {
+  * {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  * {
+    font-size: 1.7rem;
+  }
+}

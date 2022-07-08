@@ -54,3 +54,14 @@ numberButtons.forEach((button) => {
     updateDisplayValue(e.target.textContent);
   });
 });
+
+const changeSignBtn = document.querySelector(".js-change-sign-btn");
+
+changeSignBtn.addEventListener("click", changeSign);
+
+function changeSign() {
+  displayValue = +displayValue;
+  displayValue = -displayValue;
+  toString(displayValue);
+  updateDisplayValueField();
+}

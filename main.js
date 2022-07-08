@@ -59,6 +59,8 @@ numberButtons.forEach((button) => {
   });
 });
 
+// Change sign functionality.
+
 const changeSignBtn = document.querySelector(".js-change-sign-btn");
 
 changeSignBtn.addEventListener("click", changeSign);
@@ -70,6 +72,8 @@ function changeSign() {
   updateDisplayValueField();
 }
 
+// Clear all functionality.
+
 const clearBtn = document.querySelector(".js-clear-btn");
 
 clearBtn.addEventListener("click", clearAll);
@@ -79,12 +83,9 @@ function clearAll() {
   updateDisplayValueField();
 }
 
-const separatorBtn = document.querySelector(".js-separator-btn");
+// Only one separator functionality.
 
-// function toggleSeparatorOn() {
-//   if (separatorBtn.getAttribute("listener")) {
-//   }
-// }
+const separatorBtn = document.querySelector(".js-separator-btn");
 
 separatorBtn.addEventListener("click", separatorClicked);
 
@@ -92,5 +93,4 @@ function separatorClicked(e) {
   if (!displayValue.includes(".")) {
     updateDisplayValue(e.target.textContent);
   }
-  // separatorBtn.removeEventListener("click", separatorClicked);
 }

@@ -69,3 +69,12 @@ function changeSign() {
   toString(displayValue);
   updateDisplayValueField();
 }
+
+const clearBtn = document.querySelector(".js-clear-btn");
+
+clearBtn.addEventListener("click", clearAll);
+
+function clearAll() {
+  displayValue = 0;
+  updateDisplayValueField();
+}

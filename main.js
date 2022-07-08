@@ -132,3 +132,14 @@ function equalBtnEvent() {
     updateDisplayValueField();
   }
 }
+
+//  Convert to decimal percent functionality.
+
+const percentBtn = document.querySelector(".js-percent-btn");
+
+percentBtn.addEventListener("click", convertToDecimalPercent);
+
+function convertToDecimalPercent() {
+  displayValue /= 100;
+  updateDisplayValueField();
+}

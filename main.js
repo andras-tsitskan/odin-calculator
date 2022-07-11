@@ -39,6 +39,7 @@ function operate(operator, num1, num2) {
 let displayValue = 0;
 let num1 = null;
 let num2 = null;
+let operator = null;
 
 // Update display value and its field.
 
@@ -108,6 +109,7 @@ function clearAll() {
   displayValue = 0;
   num1 = null;
   num2 = null;
+  operator = null;
   updateDisplayValueField();
 }
 
@@ -126,7 +128,6 @@ function separatorClicked(e) {
 
 // Get equation result functionality.
 
-let operator;
 const operatorButtons = [...document.querySelectorAll(".js-operator-btn")];
 
 operatorButtons.forEach((button) => {
@@ -134,8 +135,20 @@ operatorButtons.forEach((button) => {
 });
 
 function operatorBtnEvent() {
-  operator = this.dataset.operator;
-  num1 = displayValue;
+  if (operator === null) {
+    operator = this.dataset.operator;
+  }
+
+  if (num1 !== null) {
+    num2 = displayValue;
+    let result = operate(operator, num1, num2);
+    num1 = result;
+    displayValue = result;
+    operator = this.dataset.operator;
+    updateDisplayValueField();
+  } else {
+    num1 = displayValue;
+  }
   displayValue = 0;
 }
 

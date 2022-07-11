@@ -13,7 +13,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return +b === 0 ? "error" : +a / +b;
+  return +b === 0 ? "error" : (+a / +b).toFixed(3);
 }
 
 function operate(operator, num1, num2) {

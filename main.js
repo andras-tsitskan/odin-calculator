@@ -15,7 +15,8 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-  return +b === 0 ? "error" : (+a / +b).toFixed(3);
+  // return +b === 0 ? "error" : (+a / +b).toFixed(3);
+  return +b === 0 ? "error" : +a / +b;
 }
 
 function operate(operator, num1, num2) {
@@ -56,11 +57,21 @@ function updateDisplayValue(number) {
 const displayValueField = document.querySelector(".js-display");
 
 function updateDisplayValueField() {
+  // Normal display value show.
   if (displayValue.toString().length <= 12) {
     displayValueField.textContent = displayValue;
   } else {
+    // If the number is getting too long, show as exponential.
     displayValue = +displayValue;
     displayValueField.textContent = displayValue.toExponential(2);
+  }
+
+  // If the display value has more than 3 numbers after decimal point, show only 3 numbers.
+  if (displayValue.toString().includes(".")) {
+    if (displayValue.toString().split(".")[1].length > 3) {
+      displayValue = (+displayValue).toFixed(3);
+      displayValueField.textContent = displayValue;
+    }
   }
 }
 

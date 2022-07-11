@@ -1,5 +1,7 @@
 "use strict";
 
+// Main maths functions.
+
 function add(a, b) {
   return +a + +b;
 }
@@ -37,9 +39,7 @@ let displayValue = 0;
 let num1 = null;
 let num2 = null;
 
-//
-
-const displayValueField = document.querySelector(".js-display");
+// Update display value and its field.
 
 function updateDisplayValue(number) {
   if (number === ".") {
@@ -53,6 +53,8 @@ function updateDisplayValue(number) {
   updateDisplayValueField();
 }
 
+const displayValueField = document.querySelector(".js-display");
+
 function updateDisplayValueField() {
   if (displayValue.toString().length <= 12) {
     displayValueField.textContent = displayValue;
@@ -61,6 +63,8 @@ function updateDisplayValueField() {
     displayValueField.textContent = displayValue.toExponential(2);
   }
 }
+
+// Number buttons functionality.
 
 const numberButtons = [...document.querySelectorAll(".number-btn")];
 
@@ -118,7 +122,7 @@ operatorButtons.forEach((button) => {
   button.addEventListener("click", operatorBtnEvent);
 });
 
-function operatorBtnEvent(e) {
+function operatorBtnEvent() {
   operator = this.dataset.operator;
   num1 = displayValue;
   displayValue = 0;

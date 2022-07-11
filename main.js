@@ -204,4 +204,18 @@ function keyPressed(e) {
   } else if (e.key === "Backspace") {
     backspace();
   }
-});
+
+  btn.classList.add("key-pressed");
+}
+
+// Keyboard animations.
+
+const allButtons = document.querySelectorAll(".calc-btn");
+
+allButtons.forEach((button) =>
+  button.addEventListener("animationend", removeTransition)
+);
+
+function removeTransition(e) {
+  e.target.classList.remove("key-pressed");
+}

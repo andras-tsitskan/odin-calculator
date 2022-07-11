@@ -48,6 +48,19 @@ body {
   border-radius: 10px;
 }
 
+.key-pressed {
+  animation-name: key-pressed;
+  animation-duration: 100ms;
+}
+
+@keyframes key-pressed {
+  from {
+  }
+  to {
+    filter: invert();
+  }
+}
+
 .calc-btn:hover {
   filter: invert();
   cursor: pointer;

@@ -10,10 +10,10 @@
 
 body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: center;
 }
 
 .calculator {
@@ -72,7 +72,8 @@ body {
 /* Footer */
 
 footer {
-  bottom: env(safe-area-inset-bottom);
+  margin-top: 1rem;
+  /* bottom: env(safe-area-inset-bottom); */
 }
 
 footer p,

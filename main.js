@@ -54,7 +54,12 @@ function updateDisplayValue(number) {
 }
 
 function updateDisplayValueField() {
-  displayValueField.textContent = displayValue;
+  if (displayValue.toString().length <= 12) {
+    displayValueField.textContent = displayValue;
+  } else {
+    displayValue = +displayValue;
+    displayValueField.textContent = displayValue.toExponential(2);
+  }
 }
 
 const numberButtons = [...document.querySelectorAll(".number-btn")];

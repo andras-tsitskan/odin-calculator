@@ -16,6 +16,8 @@ body {
   align-content: center;
 }
 
+/* Calculator */
+
 .calculator {
   display: flex;
   flex-direction: column;
@@ -91,6 +93,8 @@ footer a {
 footer a:hover {
   filter: invert();
 }
+
+/* Media queries */
 
 @media (max-width: 399px) {
   * {

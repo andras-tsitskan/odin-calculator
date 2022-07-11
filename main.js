@@ -184,7 +184,9 @@ function backspace() {
 
 // Keyboard support.
 
-window.addEventListener("keyup", (e) => {
+window.addEventListener("keyup", keyPressed);
+
+function keyPressed(e) {
   const btn = document.querySelector(`div[data-key="${e.key}"]`);
 
   if (e.key >= 0 && e.key < 10) {

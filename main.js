@@ -153,6 +153,24 @@ function convertToDecimalPercent() {
   updateDisplayValueField();
 }
 
+// Backspace functionality.
+
+const backspaceBtn = document.querySelector(".js-backspace-btn");
+
+backspaceBtn.addEventListener("click", backspace);
+
+function backspace() {
+  displayValue = displayValue.toString();
+  if (displayValue == 0) {
+  } else if ([...displayValue].length === 1) {
+    displayValue = 0;
+    updateDisplayValueField();
+  } else {
+    displayValue = displayValue.slice(0, -1);
+    updateDisplayValueField();
+  }
+}
+
 // Keyboard support.
 
 window.addEventListener("keyup", (e) => {
@@ -170,5 +188,7 @@ window.addEventListener("keyup", (e) => {
     displayValue = 0;
   } else if (e.key === "Enter") {
     equalBtnEvent();
+  } else if (e.key === "Backspace") {
+    backspace();
   }
 });

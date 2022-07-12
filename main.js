@@ -201,23 +201,7 @@ window.addEventListener("keyup", keyPressed);
 
 function keyPressed(e) {
   const btn = document.querySelector(`div[data-key="${e.key}"]`);
-
-  if (e.key >= 0 && e.key < 10) {
-    updateDisplayValue(btn.textContent);
-  } else if (e.key === ",") {
-    if (!displayValue.toString().includes(".")) {
-      updateDisplayValue(".");
-    }
-  } else if (e.key === "/" || e.key === "*" || e.key === "-" || e.key === "+") {
-    operator = btn.dataset.operator;
-    num1 = displayValue;
-    displayValue = 0;
-  } else if (e.key === "Enter") {
-    equalBtnEvent();
-  } else if (e.key === "Backspace") {
-    backspace();
-  }
-
+  btn.click();
   btn.classList.add("key-pressed");
 }
 
